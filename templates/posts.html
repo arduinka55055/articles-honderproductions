@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% set navposts = "active" %} <!--костыль ага-->
+{% block title %}
+Все статьи на сайте
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1>Все статьи на этом сайте!</h1>
+
+    {% if articles|length > 0 %}
+        {% for el in articles %}
+        <div class="alert alert-info">
+            <h2>{{ el.title }}</h2>
+            <p>{{ el.intro }}</p>
+            <p><b>Дата: {{ el.date.date() }}</b></p>
+            <a href="/posts/{{ el.id }}" class="btn btn-warning">Детальнее</a>
+        </div>
+        {% endfor %}
+    {% else %}
+    <div class="alert alert-info">
+        <h2>У вас нету сейчас статей на нашем сайте!</h2>
+        <p>Нажмите добавить чтобы создать новую статью!</p>
+        <a href="/create-article" class="btn btn-success">Добавить</a>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="/" class="nav-link {{ navglavnaya }}">Главная</a></li>
+      <li class="nav-item"><a href="/about" class="nav-link {{ navabout }}">Про нас</a></li>
+      <li class="nav-item"><a href="/posts" class="nav-link {{ navposts }}">Статьи</a></li>
+      <li class="btn btn-warning"><a href="/create-article">Создать</a></li>
+    </ul>
+  </header>
+    {% block body %}Наша главная страница{% endblock %}
+    <div class="bg-white text-secondary px-4 py-5 text-center">
+      <div class="py-5">
+        <h1 class="display-5 fw-bold text-dark">Какие-то проблемы?</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="fs-5 mb-4">НЕ можешь добавить статью или не получается проредактировать её, Обращайся к нам 24/7 мы будем рады тебе помочь</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"><i class="fab fa-discord"></i><a href="#"> Discord</a></button>
+            <button type="button" class="btn btn-outline-secondary bg-black btn-lg px-4"><i class="fab fa-telegram"></i><a href="#"> Telegramm</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
