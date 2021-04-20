@@ -1,2 +1,2 @@
 flask
-from flask_sqlalchemy
+flask-sqlalchemy
